@@ -1,0 +1,17 @@
+:root{
+    /* Primary Colors */
+    --background-color: #F9F9F9;
+    --primary-text-color: #333333;
+    --primary-button-color: #4CAF50;
+    --primary-button-text-color: #FFFFFF;
+    --link-color: #1E88E5;
+    /* Secondary Colors */
+    --header-footer-bg: #FFFFFF;
+    --section-background: #F5F5F5;
+    --button-hover-color: #45A049;
+    --link-hover-color: #1565C0;
+    --border-color: #DDDDDD;
+    /* Fonts */
+    --primary-font: Helvetica Neue, sans-serif;
+    --secondary-font: georgia, serif;
+}

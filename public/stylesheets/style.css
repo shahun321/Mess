@@ -1,8 +1,337 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+
+*{
+  box-sizing: border-box;
 }
 
-a {
-  color: #00B7FF;
+
+
+
+@media (max-width: 991px) {
+    .navbar-scroll {
+      background-color: #fff;
+    }
+       
+    .navbar-scroll .navbar-brand,
+    .navbar-scroll .nav-link,
+    .navbar-scroll .fa-bars {
+      color: #4f4f4f !important;
+    }         
+  }
+
+  #bg_video {
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    /* -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%); */
+  }
+ .profile_logo_nav{
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+ }
+
+  .navbar-brand {
+    letter-spacing: 3px;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  .navbar-scroll .navbar-brand,
+  .navbar-scroll .nav-link,
+  .navbar-scroll .fa-bars {
+    color: #fff;
+  }
+  
+  .navbar-scroll {
+    box-shadow: none;
+  }
+  
+  .navbar-scrolled {
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .05);
+  }
+  
+  .navbar-scrolled .navbar-brand,
+  .navbar-scrolled .nav-link,
+  .navbar-scrolled .fa-bars {
+    color: #4f4f4f;
+  }
+
+  .navbar{
+    background: linear-gradient(90deg, rgba(42,38,42,0.4907212885154062) 20%, rgba(32,28,42,0.6671918767507004) 60%, rgba(55,45,60,1) 100%);
+  }
+ 
+    
+  
+  .navbar-scrolled {
+    background-color: #fff;
+  }
+ .hero_text{
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: beige;
+  
+ }
+ /* .hero_text_div{
+  padding-bottom: 100px;
+ } */
+
+ #home_text{
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: linear-gradient(to right, #9b7fed, #7c76d8,#516a74, #72b2f2);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+ }
+ .header_logo_center{
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  background: linear-gradient(to right, #f32170, #ff6b08,#cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+ }
+
+ .hero-btn-booknow {
+  background: #188ef4;
+  background: -webkit-linear-gradient(legacy-direction(to right), #188ef4 0%, #316ce8 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#188ef4), to(#316ce8));
+  background: -webkit-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+  background: -o-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+  background: linear-gradient(to right, #188ef4 0%, #316ce8 100%);
+  
 }
+
+.hero-btn-booknow:hover {
+  background: #316ce8;
+  background: -webkit-linear-gradient(legacy-direction(to right), #316ce8 0%, #188ef4 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#316ce8), to(#188ef4));
+  background: -webkit-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+  background: -o-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+  background: linear-gradient(to right, #316ce8 0%, #188ef4 100%);
+}
+.hero_btns{
+ margin-bottom: 350px;
+}
+
+ .btn_cta {
+  padding: 10px 25px;
+  font-size: 24px;
+}
+
+
+  
+  @media (max-width: 450px) {
+    #intro {
+      height: 950px !important;
+    }
+  }
+  
+  @media (min-width: 550px) and (max-width: 750px) {
+    #intro {
+      height: 1100px !important;
+    }
+  }
+  
+  @media (min-width: 800px) and (max-width: 990px) {
+    #intro {
+      height: 600px !important;
+    }
+  }
+  
+  .display-1 {
+    font-weight: 500 !important;
+    letter-spacing: 40px;
+  }
+  
+  @media (min-width: 1600px) {
+    .display-1 {
+      font-size: 10rem;
+    }
+  }
+
+  /* feature section */
+
+  .service-7 {
+    font-family: "Lora", serif;
+    color: #8d97ad;
+    font-weight: 300;
+  }
+  
+  .service-7 h1, .service-7 h2, .service-7 h3, .service-7 h4, .service-7 h5, .service-7 h6 {
+    color: #3e4555;
+  }
+  
+  .service-7 .font-weight-medium {
+    font-weight: 500;
+  }
+  
+  .service-7 a {
+    text-decoration: none;
+  }
+  
+  .service-7 .linking {
+    color: #3e4555;
+  }
+  
+  .service-7 .linking:hover {
+    color: #316ce8;
+  }
+  
+  .service-7 .subtitle {
+      color: #8d97ad;
+      line-height: 24px;
+  }
+  
+  .service-7 .btn-info-gradiant {
+      background: #188ef4;
+      background: -webkit-linear-gradient(legacy-direction(to right), #188ef4 0%, #316ce8 100%);
+      background: -webkit-gradient(linear, left top, right top, from(#188ef4), to(#316ce8));
+      background: -webkit-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+      background: -o-linear-gradient(left, #188ef4 0%, #316ce8 100%);
+      background: linear-gradient(to right, #188ef4 0%, #316ce8 100%);
+  }
+  
+  .service-7 .btn-info-gradiant:hover {
+      background: #316ce8;
+      background: -webkit-linear-gradient(legacy-direction(to right), #316ce8 0%, #188ef4 100%);
+      background: -webkit-gradient(linear, left top, right top, from(#316ce8), to(#188ef4));
+      background: -webkit-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+      background: -o-linear-gradient(left, #316ce8 0%, #188ef4 100%);
+      background: linear-gradient(to right, #316ce8 0%, #188ef4 100%);
+  }
+  
+  .service-7 .btn-md {
+      padding: 15px 45px;
+      font-size: 16px;
+  }
+  /* Feature End */
+
+  /* Testimonial Section */
+
+  .container_testimonial{
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  /* Testimonial End */
+
+
+  /* footer */
+
+  .footer{
+    background: #213547;
+    background: -webkit-linear-gradient(legacy-direction(to right), #274055 0%, #30264e 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#274055), to(#30264e));
+    background: -webkit-linear-gradient(left, #274055 0%, #30264e 100%);
+    background: -o-linear-gradient(left, #274055 0%, #30264e 100%);
+    background: linear-gradient(to right, #274055 0%, #30264e 100%);
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+  }
+  .footer:hover {
+    background: #316ce8;
+    background: -webkit-linear-gradient(legacy-direction(to right), #30264e 0%, #274055 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#30264e), to(#274055));
+    background: -webkit-linear-gradient(left, #30264e 0%, #274055 100%);
+    background: -o-linear-gradient(left, #30264e 0%, #274055 100%);
+    background: linear-gradient(to right, #30264e 0%, #274055 100%);
+}
+.footer a{
+  text-decoration: none;
+}
+
+/* Footer End */
+
+
+/* Login Section */
+
+.login_logo{
+  width: 150px;
+  height: 90px;
+}
+
+.login_section{
+  background-image: url('/images/hero_image.jpg');
+  /* background-repeat: no-repeat; */
+background-size: cover;
+    /* background: #213547;
+    background: -webkit-linear-gradient(legacy-direction(to right), #274055 0%, #30264e 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#274055), to(#30264e));
+    background: -webkit-linear-gradient(left, #274055 0%, #30264e 100%);
+    background: -o-linear-gradient(left, #274055 0%, #30264e 100%);
+    background: linear-gradient(to right, #274055 0%, #30264e 100%); */
+    height: auto;
+}
+
+.login_linear_gradient{
+   /* fallback for old browsers */
+   background: #363f3a;
+  
+   /* Chrome 10-25, Safari 5.1-6 */
+   background: -webkit-linear-gradient(to right, rgba(92, 94, 92, 0.5), rgba(52, 53, 53, 0.5));
+   
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   background: linear-gradient(to right, rgba(92, 94, 92, 0.5), rgba(52, 53, 53, 0.5))
+   }
+   .gradient-custom-4 {
+   /* fallback for old browsers */
+   background: #363f3a;
+   
+   /* Chrome 10-25, Safari 5.1-6 */
+   background: -webkit-linear-gradient(to right, rgba(92, 94, 92, 0.5), rgba(52, 53, 53, 0.5));
+   
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   background: linear-gradient(to right, rgba(92, 94, 92, 0.5), rgba(52, 53, 53, 0.5));
+   width: 100%;
+
+    
+}
+
+
+
+/* login end */
+
+/* sign up */
+.signup_section_bgimg{
+  height: 100vh;
+  background-image: url(/images/hero_image.jpg);
+  background-size: cover;
+}
+
+
+.gradient-custom-3 {
+  /* fallback for old browsers */
+  background: #363f3a;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(92, 94, 92, 0.5), rgba(52, 53, 53, 0.5));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(92, 94, 92, 0.5), rgba(52, 53, 53, 0.5))
+  }
+  .gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #363f3a;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(92, 94, 92, 0.5), rgba(52, 53, 53, 0.5));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(92, 94, 92, 0.5), rgba(52, 53, 53, 0.5));
+
+  
+  }
