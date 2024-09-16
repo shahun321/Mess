@@ -44,8 +44,8 @@
                   </div>
 
                   <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
-                    {{#if loginErr}}
-            <p class="error" style="color: red;">Invalid Credentials</p>
+                    {{#if login}}
+            <p class="error" style="color: red;">{{error}}</p>
             {{/if}}
                   <div data-mdb-input-init class="form-outline mb-4">
                     <input type="email" id="form2Example17" name="email" class="form-control form-control-lg" />

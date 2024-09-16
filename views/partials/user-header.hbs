@@ -32,7 +32,13 @@
           <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item me-5 me-lg-0">
               <a class="nav-link profile_logo_nav" href="/login">
-                <i class="fa-duotone fa-solid fa-user"> </i> Profile
+                <i class="fa-duotone fa-solid fa-user"> </i> 
+                {{#if user}}
+                {{user.name}}
+                
+                {{else}}
+                Profile
+                {{/if}}
 
               </a>
             </li>

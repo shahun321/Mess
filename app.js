@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs=require('express-handlebars')
 var mongoose = require('mongoose');
-const bcryptjs = require('bcryptjs');
+const session = require('express-session');
 
 
 
@@ -15,7 +15,7 @@ var adminRouter = require('./routes/admin')
 
 var app = express();
 
-const connect = mongoose.connect("mongodb://localhost:27017/Login")
+const connect = mongoose.connect("mongodb://localhost:27017")
 
 connect.then(()=>{
     console.log("Connected");
@@ -37,15 +37,18 @@ app.engine('hbs', hbs.engine({
 
 
 
-
-
-
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  path: '/',
+  secret: 'my-secret-key',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {maxAge:60000}
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
