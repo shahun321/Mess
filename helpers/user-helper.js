@@ -11,14 +11,18 @@ module.exports = {
             let response = {};
             const existingUser = await loginCollection.findOne({ email: userData.email });
             if (!existingUser) {
-                userData.password = await bcryptjs.hash(userData.password, 10)
-                // console.log(userData.password);
-
-                loginCollection.create(userData).then((status) => {
-                    response.status = true;
-                    response.user = userData
-                    resolve(response)
-                })
+                
+                        userData.password = await bcryptjs.hash(userData.password, 10)
+                        // console.log(userData.password);
+        
+                        loginCollection.create(userData).then((status) => {
+                            response.status = true;
+                            response.user = userData
+                            resolve(response)
+                        })
+                    
+                
+                
 
             } else {
 
@@ -30,40 +34,25 @@ module.exports = {
     },
     doLogin: (userData) => {
         return new Promise(async (resolve, reject) => {
-            let response={}
+            let response = {}
             const user = await loginCollection.findOne({ email: userData.email });
             if (user) {
-                 bcryptjs.compare(userData.password, user.password).then((status) => {
+                bcryptjs.compare(userData.password, user.password).then((status) => {
                     if (status) {
 
                         response.user = user
                         response.status = true
                         resolve(response)
-                    }else{
-                        resolve({status:false})
+                    } else {
+                        resolve({ status: false })
                     }
                 })
 
+            } else {
+                resolve({ status: false })
             }
 
-            // try {
 
-            //     if (!user) {
-            //         return res.render("user/login", { error: 'User not found' });
-            //     }
-            //     const passwordMatch = await bcryptjs.compare(req.body.password, user.password);
-
-            //     if (passwordMatch) {
-            //         res.render(user);
-            //         res.redirect("user/dashboard")
-            //     } else {
-            //         res.send(login = true)
-            //         res.redirect('/login');
-            //     }
-            // } catch (error) {
-            //     console.log(error);
-            //     res.render("error")
-            // }
         })
     }
 }

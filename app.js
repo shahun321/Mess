@@ -6,6 +6,7 @@ var logger = require('morgan');
 var hbs=require('express-handlebars')
 var mongoose = require('mongoose');
 const session = require('express-session');
+var fileUpload = require('express-fileupload')
 
 
 
@@ -49,6 +50,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: {maxAge:60000}
 }));
+app.use(fileUpload())
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

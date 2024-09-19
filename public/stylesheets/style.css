@@ -349,3 +349,55 @@ background-size: cover;
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
     }
+
+
+    /* Menu Section */
+
+   /* .container{ border: 2px solid green }
+.grid-item{ border: 2px solid red; padding: 20px;}
+.grid{ border: 1px solid blue} */
+.menu_container{
+  /* padding-bottom: 50px; */
+}
+
+.menu_filters ul{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  border-bottom: 2px solid #D9D9D9;
+  margin: 100px 15px
+}
+.menu_filters ul li{
+  display: inlnie-block;
+  text-align: center;
+  margin-right: 12px;
+  padding: 0 5px 8px 5px;
+  font-weight: 700;
+  font-size: 16px; 
+  cursor: pointer;
+  position: relative;
+  margin-bottom: -2px;
+  color: #777;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+.menu_filters ul li:hover{
+  color: #EB2D3A;
+}
+.menu_filters ul li.is-checked{
+  border-bottom: 2px solid #EB2D3A;
+}
+.menu_filters ul li:last-child{
+  margin-right: 0;
+}
+ 
+
+.grid .grid-item h1{
+  background: #EEEEEE;
+  height: 150px;
+  line-height: 150px;
+  color: white;
+  font-size: 3em;
+  text-align: center;
+  margin-bottom: 30px;
+}

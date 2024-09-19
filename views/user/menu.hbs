@@ -1,0 +1,79 @@
+<div class="menu_container"></div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="menu_filters">
+        <ul>
+          <li class="is-checked" data-filter="*">All</li>
+          <li  data-filter=".breakfast">Breakfast</li>
+          <li  data-filter=".lunch">Lunch</li>
+          <li  data-filter=".dinner">Dinner</li>
+          {{!-- <li class="" data-filter=".code">Code</li>
+          <li class="" data-filter=".logic">Logic</li>
+          <li class="" data-filter=".creativity">Creativity</li> --}}
+        </ul>
+      </div>
+    </div>
+    
+    <div class="col-md-12 mb-5">
+      <div class="rows grid data-isotope='{ "itemSelector": ".grid-item", "masonry": { "columnWidth": 200 } }'">
+        <div class="col-md-3 menu_grid_item dinner" data-category="websites">
+          <h1>1</h1>
+        </div>
+        <div class="col-md-3 menu_grid_item lunch" data-category="flyers">
+          <h1>2</h1>
+        </div>
+        <div class="col-md-6 menu_grid_item lunch" data-category="ads">
+          <h1>3</h1>
+        </div>
+        <div class="col-md-4 menu_grid_item breakfast" data-category="books">
+          <h1>4</h1>
+        </div>
+        <div class="col-md-4 menu_grid_item dinner" data-category="logos">
+          <h1>5</h1>
+        </div>
+        <div class="col-md-4 menu_grid_item breakfast" data-category="websites">
+          <h1>6</h1>
+        </div>
+        <div class="col-md-6 menu_grid_item lunch" data-category="ads">
+          <h1>7</h1>
+        </div>
+        <div class="col-md-6 menu_grid_item dinner" data-category="books">
+          <h1>8</h1>
+        </div>
+        <div class="col-md-6 menu_grid_item dinner" data-category="books">
+          <h1>9</h1>
+        </div>
+        <div class="col-md-2 menu_grid_item lunch" data-category="books">
+          <h1>10</h1>
+        </div>
+        <div class="col-md-2 menu_grid_item breakfast" data-category="books">
+          <h1>11</h1>
+        </div>
+        <div class="col-md-2 menu_grid_item breakfast" data-category="books">
+          <h1>12</h1>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+    var $grid = $('.grid').isotope({
+    // options
+    itemSelector: '.menu_grid_item',
+    layoutMode: 'fitRows',
+  });
+  
+  // change is-checked class on buttons
+  var $buttonGroup = $('.menu_filters');
+  $buttonGroup.on( 'click', 'li', function( event ) {
+    $buttonGroup.find('.is-checked').removeClass('is-checked');
+    var $button = $( event.currentTarget );
+    $button.addClass('is-checked');
+    var filterValue = $button.attr('data-filter');
+    $grid.isotope({ filter: filterValue });
+  });
+</script>
+
+
