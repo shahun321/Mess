@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const userHelper = require('../helpers/user-helper')
-const bcryptjs = require('bcryptjs');
-var fileUpload=require('express-fileupload')
+var fileUpload = require('express-fileupload')
 const verifyLogin = (req, res, next) => {
   if (req.session.userLoggedIn) {
     next()
@@ -38,30 +37,30 @@ router.get('/signup', (req, res) => {
   req.session.userSignupErr = false
 })
 
-router.post('/signup', async (req, res,next) => {
-  
+router.post('/signup', async (req, res, next) => {
+
   userHelper.doSignup(req.body).then((response) => {
-    
-  if (!req.files || Object.keys(req.files).length === 0) {
-    return res.status(400).send('No files were uploaded.');
-  }
 
-  let profileImage = req.files.profile_image;
-  let email = req.body.email
-  let uploadPath = './public/profile-pic/' + email+'.png';
 
-  // Use the mv() method to place the file somewhere on your server
-  profileImage.mv(uploadPath, function(err) {
-    if (err)
-      return res.status(500).send(err);
-  });
-    
+
     if (response.status) {
-      // console.log(response)
+      if (!req.files || Object.keys(req.files).length === 0) {
+        return res.status(400).send('No files were uploaded.');
+      }
+
+      let profileImage = req.files.profile_image;
+      let email = req.body.email
+      let uploadPath = './public/profile-pic/' + email + '.png';
+
+      // Use the mv() method to place the file somewhere on your server
+      profileImage.mv(uploadPath, function (err) {
+        if (err)
+          return res.status(500).send(err);
+      });
 
       req.session.user = response.user
       req.session.userLoggedIn = true
-      
+
       res.redirect('/dashboard')
     } else {
       req.session.userSignupErr = "Email already registered"
@@ -105,7 +104,7 @@ router.get('/logout', (req, res) => {
   }
 })
 
-router.get('/menu', (req,res)=>{
+router.get('/menu', (req, res) => {
   res.render('user/menu')
 })
 

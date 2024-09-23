@@ -19,32 +19,34 @@ const LoginSchema = new mongoose.Schema({
     
 });
 
+const AdminLoginSchema = new mongoose.Schema({
+    name:{
+        type: String,
+        requied: true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    admin:{
+        type:Boolean,
+        default:true
+    }
+
+})
+
 const loginCollection = new mongoose.model("users", LoginSchema)
-module.exports = loginCollection;
+const adminLoginCollection = new mongoose.model("admins", AdminLoginSchema)
+// var collection={loginCollection,adminLoginCollection}
+module.exports = {
+    loginCollection: loginCollection,
+    adminLoginCollection:adminLoginCollection
+}
 
 
 
 
-// const mongoClient = require('mongodb').MongoClient;
-// const state = {
-//     db: null
-// };
-
-// const connect =  (done)=> {
-//     const url = 'mongodb://localhost:27017/';
-//     const dbname = 'shopping';
-
-//     mongoClient.connect(url)
-//     .then((data)=>{
-//         state.db=data.db(dbname);
-//         done();
-//     })
-   
-// };
-// const get=()=>{
-//      return state.db;
-    
-// }
-
-// exports.connect = connect
-// exports.get = get

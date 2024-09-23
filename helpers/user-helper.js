@@ -1,8 +1,7 @@
-var loginCollection = require('../config/connection')
-var collection = require('../config/collections')
+var {loginCollection} = require('../config/connection')
+
 const bcryptjs = require('bcryptjs')
-const { USER_COLLECTION } = require('../config/collections')
-var objectId = require('mongodb').ObjectId
+
 
 
 module.exports = {
