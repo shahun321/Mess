@@ -16,7 +16,7 @@ var adminRouter = require('./routes/admin')
 
 var app = express();
 
-const connect = mongoose.connect("mongodb://localhost:27017")
+const connect = mongoose.connect("mongodb://localhost:27017/Messd")
 
 connect.then(()=>{
     console.log("Connected");

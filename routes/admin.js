@@ -1,11 +1,19 @@
 var express = require('express');
 var router = express.Router();
 const adminHelper = require('../helpers/admin-helper')
+const productHelper = require('../helpers/product-helper')
+const verifyAdmin = (req, res, next) => {
+    if (req.session.adminLoggedIn) {
+        next()
+    } else {
+        res.redirect('/admin/')
+    }
+}
 
 
 router.get('/', (req, res) => {
     if (req.session.adminLoggedIn) {
-        res.redirect('/dashboard')
+        res.redirect('/admin/dashboard')
     } else {
         res.render('admin/login', { "loginErr": req.session.adminLoginErr })
         req.session.adminLoginErr = false;
@@ -30,7 +38,7 @@ router.post('/signup', async (req, res, next) => {
 
             let adminImage = req.files.profile_image;
             let email = req.body.email
-            let uploadPath = './public/images/admin_profile' + email + '.png';
+            let uploadPath = './public/images/admin_profile/' + email + '.png';
 
             // Use the mv() method to place the file somewhere on your server
             adminImage.mv(uploadPath, function (err) {
@@ -40,6 +48,7 @@ router.post('/signup', async (req, res, next) => {
 
             req.session.admin = response.admin
             req.session.adminLoggedIn = true
+
 
             res.redirect('/admin/dashboard')
         } else {
@@ -65,7 +74,11 @@ router.post('/login', async (req, res) => {
 
 router.get('/dashboard', (req, res) => {
     let admin = req.session.admin
-    res.render('admin/dashboard', { admin })
+    if (admin) {
+        res.render('admin/dashboard', { admin })
+    } else {
+        res.redirect('/admin/')
+    }
 })
 router.get('/logout', (req, res) => {
     if (req.session.admin) {
@@ -75,6 +88,19 @@ router.get('/logout', (req, res) => {
     } else {
         res.redirect('/admin/')
     }
+})
+
+router.get('/addmenu', (req, res) => {
+
+    res.render('admin/add-menu')
+
+})
+
+router.post('/addmenu', (req, res) => {
+    productHelper.addProduct(req.body).then((response) => {
+        res.redirect('/admin/addmenu')
+    })
+
 })
 
 

@@ -8,7 +8,7 @@ module.exports = {
 
     adminSignup: (adminData) => {
         return new Promise(async (resolve, reject) => {
-            console.log(adminData);
+            // console.log(adminData);
             
             let response = {};
             const existingAdmin = await adminLoginCollection.findOne({ email: adminData.email });
@@ -39,6 +39,8 @@ module.exports = {
             let response = {}
             const admin = await adminLoginCollection.findOne({ email: adminData.email });
             if (admin) {
+                // console.log(admin);
+                
                 bcryptjs.compare(adminData.password, admin.password).then((status) => {
                     if (status) {
 

@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const userHelper = require('../helpers/user-helper')
-var fileUpload = require('express-fileupload')
+var fileUpload = require('express-fileupload');
+const productHelper = require('../helpers/product-helper');
 const verifyLogin = (req, res, next) => {
   if (req.session.userLoggedIn) {
     next()
@@ -105,7 +106,14 @@ router.get('/logout', (req, res) => {
 })
 
 router.get('/menu', (req, res) => {
-  res.render('user/menu')
+  
+  productHelper.getAllProducts().then((products)=>{
+    console.log(products);
+    
+    
+    res.render('user/menu',{products})
+  })
+  
 })
 
 

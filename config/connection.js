@@ -37,14 +37,36 @@ const AdminLoginSchema = new mongoose.Schema({
         default:true
     }
 
+});
+
+const ProductSchema = new mongoose.Schema({
+    product_name:{
+        type: String,
+        requied: true
+    },
+    product_category:{
+        type:String,
+        requied: true
+    },
+    product_price:{
+        type:String,
+        required:true
+    },
+    product_description:{
+        type:String,
+        required:true
+    }
 })
+
 
 const loginCollection = new mongoose.model("users", LoginSchema)
 const adminLoginCollection = new mongoose.model("admins", AdminLoginSchema)
-// var collection={loginCollection,adminLoginCollection}
+const productCollection = new mongoose.model("products", ProductSchema)
+
 module.exports = {
-    loginCollection: loginCollection,
-    adminLoginCollection:adminLoginCollection
+    loginCollection : loginCollection,
+    adminLoginCollection : adminLoginCollection,
+    productCollection : productCollection
 }
 
 
