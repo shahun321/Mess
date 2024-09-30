@@ -1,6 +1,6 @@
 <section class="add_menu_form">
 
-<form class="p-5" action="/admin/addmenu" method="post">
+<form class="p-5" action="/admin/addmenu" method="post" enctype="multipart/form-data">
     <!-- 2 column grid layout with text inputs for the first and last names -->
     <div class="row mb-4 mt-5">
         <h1 class="text-center">Add to Menu</h1>
@@ -43,7 +43,7 @@
     <!-- Image input -->
         <label class="form-label" for="form6Example5">Image</label>
     <div data-mdb-input-init class="form-outline mb-4">
-        <input type="file" name="product_image" id="form6Example5" class="form-control" />
+        <input type="file" name="product_image" class="form-control" />
     </div>
 
     <!-- Description input -->

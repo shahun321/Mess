@@ -84,15 +84,9 @@ router.post('/login', async (req, res) => {
   })
 })
 
-router.get('/dashboard', (req, res) => {
-
-  if (req.session.user) {
-    let user = req.session.user
-    console.log(user)
-    res.render('user/dashboard', { user })
-  } else {
-    res.redirect('/login')
-  }
+router.get('/dashboard', verifyLogin, (req, res) => {
+  let user = req.session.user
+  res.render('user/dashboard', { user })
 })
 
 router.get('/logout', (req, res) => {
@@ -105,15 +99,13 @@ router.get('/logout', (req, res) => {
   }
 })
 
-router.get('/menu', (req, res) => {
-  
-  productHelper.getAllProducts().then((products)=>{
-    console.log(products);
-    
-    
-    res.render('user/menu',{products})
+router.get('/menu', verifyLogin, (req, res) => {
+
+  productHelper.getAllProducts().then((products) => {
+    let user = req.session.user;
+    res.render('user/menu', { products, user })
   })
-  
+
 })
 
 

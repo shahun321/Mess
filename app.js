@@ -12,7 +12,8 @@ var fileUpload = require('express-fileupload')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var adminRouter = require('./routes/admin')
+var adminRouter = require('./routes/admin');
+const { handlebars } = require('hbs');
 
 var app = express();
 
@@ -25,6 +26,9 @@ connect.then(()=>{
     
 })
 
+const isEqualHelperHandlerbar = function(a, b, options) {
+  return (a == b) ? options.fn(this) : options.inverse(this); 
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,7 +37,10 @@ app.engine('hbs', hbs.engine({
   extname:'hbs',
   defaultLayout:'layout',
   layoutsDir:__dirname+'/views/layout/',
-  partialsDir:__dirname+'/views/partials/'
+  partialsDir:__dirname+'/views/partials/',
+  helpers : {
+  if_equal : isEqualHelperHandlerbar
+}
 }));
 
 
@@ -48,13 +55,14 @@ app.use(session({
   secret: 'my-secret-key',
   resave: false,
   saveUninitialized: true,
-  cookie: {maxAge:60000}
+  cookie: {maxAge:600000}
 }));
 app.use(fileUpload())
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin',adminRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
